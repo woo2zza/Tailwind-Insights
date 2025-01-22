@@ -2,12 +2,57 @@
 
 import Pseudo from "@/components/Pseudo_Class";
 import OddEven from "@/components/Odd_Even";
-import GiantButton from "@/components/giantButton";
+import GiantButton from "@/components/GiantButton";
 import MixtureButton from "@/components/MixtureButton";
 
 export default function Home() {
   const doSomething = () => alert("확인 클릭!");
   const doSomethingElse = () => alert("취소 클릭!");
+
+  const dummyData = [
+    {
+      title: "Everyone is changing their life with pocket",
+      description:
+        "I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!",
+      author: "- BruceWayne",
+      animation: "animate-moveUpFast",
+    },
+    {
+      title: "This app changed my financial future",
+      description:
+        "Pocket has completely revolutionized how I invest. I'm seeing returns like never before!",
+      author: "- SarahLuvzCash",
+      animation: "animate-moveUpSlow",
+    },
+    {
+      title: "Best investment decision ever",
+      description:
+        "Investing with Pocket is effortless, and I'm already planning my next vacation!",
+      author: "- MrBurns",
+      animation: "animate-moveUpFast",
+    },
+    // {
+    //   title: "Everyone is changing their life with pocket",
+    //   description:
+    //     "I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!",
+    //   author: "- BruceWayne",
+    //   animation: "animate-moveUpFast",
+    // },
+    // {
+    //   title: "This app changed my financial future",
+    //   description:
+    //     "Pocket has completely revolutionized how I invest. I'm seeing returns like never before!",
+    //   author: "- SarahLuvzCash",
+    //   animation: "animate-moveUpSlow",
+    // },
+    // {
+    //   title: "Best investment decision ever",
+    //   description:
+    //     "Investing with Pocket is effortless, and I'm already planning my next vacation!",
+    //   author: "- MrBurns",
+    //   animation: "animate-moveUpFast",
+    // },
+  ];
 
   return (
     <div className="space-y-4">
@@ -39,6 +84,7 @@ export default function Home() {
         />
         <GiantButton title="Danger Button" color="danger" size="small" />
       </div>
+
       <div className="animate-fadeIn">
         <MixtureButton>
           <MixtureButton.Icon type="fancy" />
@@ -69,6 +115,63 @@ export default function Home() {
           ></MixtureButton.Content>
           연습하기
         </MixtureButton>
+      </div>
+      <div className="w-[150px] h-[100px] bg-blue-300 border transition-all duration-100 hover:w-[300px] hover:h-[200px] hover:bg-indigo-400 justify-center flex items-center">
+        hover 연습하기
+      </div>
+      <hr />
+      <hr />
+      <div className="flex gap-4 overflow-hidden">
+        <div className="flex flex-col gap-4 animate-moveUpFast">
+          <MixtureButton>
+            <MixtureButton.Icon type="fancy" />
+            <MixtureButton.Content
+              title="Everyone is changing their life with pocket"
+              description="I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!"
+            ></MixtureButton.Content>
+            - BruceWayne
+          </MixtureButton>
+        </div>
+        <div className="flex flex-col gap-4 animate-moveUpSlow">
+          <MixtureButton>
+            <MixtureButton.Icon type="fancy" />
+            <MixtureButton.Content
+              title="Everyone is changing their life with pocket"
+              description="I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!"
+            ></MixtureButton.Content>
+            - BruceWayne
+          </MixtureButton>
+        </div>
+        <div className="flex flex-col gap-4 animate-moveUpFast">
+          <MixtureButton>
+            <MixtureButton.Icon type="fancy" />
+            <MixtureButton.Content
+              title="Everyone is changing their life with pocket"
+              description="I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!"
+            ></MixtureButton.Content>
+            - BruceWayne
+          </MixtureButton>
+        </div>
+      </div>
+      <hr />
+      <div className="mt-10 space-y-4">
+        <div className="flex gap-4 overflew-hidden">
+          {dummyData.map((item, index) => (
+            <div
+              key={index}
+              className={`flex flex-col gap-4 ${item.animation}`}
+            >
+              <MixtureButton>
+                <MixtureButton.Icon type="fancy" />
+                <MixtureButton.Content
+                  title={item.title}
+                  description={item.description}
+                />
+                <p className="text-sm text-gray-500">{item.author}</p>
+              </MixtureButton>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

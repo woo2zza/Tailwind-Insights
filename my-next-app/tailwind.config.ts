@@ -5,29 +5,49 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    keyframes: {
-      fadeIn: {
-        from: { opacity: "0" },
-        to: { opacity: "1" },
+    extend: {
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        slideIn: {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
+        scale: {
+          from: { transform: "scale(0)" },
+          to: { transform: "scale(1)" },
+        },
+        rotate: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        moveUpSlow: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+        moveUpFast: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
       },
-      slideIn: {
-        from: { transform: "translateX(-100%)" },
-        to: { transform: "translateX(0)" },
+      animation: {
+        fadeIn: "fadeIn 1s ease-in",
+        slideIn: "slideIn 0.5s ease-out",
+        scaleUp: "scale 0.3s ease-in-out",
+        rotate: "rotate 2s linear infinite",
+        moveUpSlow: "moveUpSlow 10s linear infinite",
+        moveUpFast: "moveUpFast 7s linear infinite",
       },
-      scale: {
-        from: { transform: "scale(0)" },
-        to: { transform: "scale(1)" },
+      moveUpSlow: {
+        "0%": { transform: "translateY(0)" },
+        "100%": { transform: "translateY(-100%)" },
       },
-      rotate: {
-        from: { transform: "rotate(0deg)" },
-        to: { transform: "rotate(360deg)" },
+      moveUpFast: {
+        "0%": { transform: "translateY(0)" },
+        "100%": { transform: "translateY(-100%)" },
       },
-    },
-    animation: {
-      fadeIn: "fadeIn 1s ease-in",
-      slideIn: "slideIn 0.5s ease-out",
-      scaleUp: "scale 0.3s ease-in-out",
-      rotate: "rotate 2s linear infinite",
     },
   },
   plugins: [],

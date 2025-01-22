@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 // Dialog 컴포넌트의 컨테이너
 const MixtureButton = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="p-6 border rounded-lg shadow-md bg-white max-w-sm">
+    <div className="p-6 border rounded-[8%] shadow-md bg-white max-w-xs">
       {children}
     </div>
   );
@@ -12,11 +12,11 @@ const MixtureButton = ({ children }: { children: ReactNode }) => {
 // Icon 컴포넌트
 MixtureButton.Icon = ({ type }: { type: "simple" | "fancy" }) => {
   return (
-    <div className="flex justify-center mb-4">
+    <div className="text-start mb-4">
       {type === "fancy" ? (
-        <span className="text-4xl">✨</span>
+        <span className="flex justify-start text-xl">★★★★★</span>
       ) : (
-        <span className="text-4xl">🔔</span>
+        <span className="text">🔔</span>
       )}
     </div>
   );
@@ -31,9 +31,9 @@ MixtureButton.Content = ({
   description: string;
 }) => {
   return (
-    <div className="text-center">
-      <h2 className="text-xl font-bold mb-2">{title}</h2>
-      <p className="text-gray-600">{description}</p>
+    <div className="text-start">
+      <h2 className="text-[13px] font-bold mb-2">{title}</h2>
+      <p className="text-gray-600 text-[9px] mb-4">{description}</p>
     </div>
   );
 };
