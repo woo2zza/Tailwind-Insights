@@ -4,6 +4,7 @@ import Pseudo from "@/components/Pseudo_Class";
 import OddEven from "@/components/Odd_Even";
 import GiantButton from "@/components/GiantButton";
 import MixtureButton from "@/components/MixtureButton";
+import Storage from "@/components/Storage";
 
 export default function Home() {
   const doSomething = () => alert("확인 클릭!");
@@ -31,27 +32,6 @@ export default function Home() {
       author: "- MrBurns",
       animation: "animate-moveUpFast",
     },
-    // {
-    //   title: "Everyone is changing their life with pocket",
-    //   description:
-    //     "I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!",
-    //   author: "- BruceWayne",
-    //   animation: "animate-moveUpFast",
-    // },
-    // {
-    //   title: "This app changed my financial future",
-    //   description:
-    //     "Pocket has completely revolutionized how I invest. I'm seeing returns like never before!",
-    //   author: "- SarahLuvzCash",
-    //   animation: "animate-moveUpSlow",
-    // },
-    // {
-    //   title: "Best investment decision ever",
-    //   description:
-    //     "Investing with Pocket is effortless, and I'm already planning my next vacation!",
-    //   author: "- MrBurns",
-    //   animation: "animate-moveUpFast",
-    // },
   ];
 
   return (
@@ -172,6 +152,10 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </div>
+      <hr />
+      <div>
+        <Storage />
       </div>
     </div>
   );
